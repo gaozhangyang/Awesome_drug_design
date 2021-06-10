@@ -15,9 +15,7 @@ This is a paper list about deep learning for graphs. Some works may be ignored t
     :depth: 2
 
 .. role:: venue(strong)
-
 .. role:: model(emphasis)
-
 .. role:: content(literal)
 
 
@@ -27,8 +25,8 @@ Generative
 
 `Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules <https://pubs.acs.org/doi/pdf/10.1021/acscentsci.7b00572>`_
     | :venue:`ACS central science 4, no. 2 (2018): 268-276.`
-    | :model:`AutoEncoder: SMILES string-->latent vector-->SMILES string`
-    | :content:`Convert discrete molecules to a multidimensional continuous representation. Generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds.`
+    | `AutoEncoder: SMILES string-->latent vector-->SMILES string`
+    | `Convert discrete molecules to a multidimensional continuous representation. Generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds.`
 
 
 `Generating Focused Molecule Libraries for Drug Discovery with Recurrent Neural Networks <https://pubs.acs.org/doi/full/10.1021%2Facscentsci.7b00512>`_
