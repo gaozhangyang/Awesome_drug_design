@@ -1,5 +1,5 @@
 Literature of Deep Learning for Drug Design
-**************************************
+*******************************************
 
 This is a paper list about deep learning for graphs. Some works may be ignored to highlight the really important advances, including
 
