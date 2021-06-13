@@ -10,10 +10,14 @@ This is a paper list about deep learning for graphs. Some works may be ignored t
 #. low-quality preprint papers
 #. papers without open-source python code
 
+
+
 .. raw:: html
 
-    <style> .red {color:red} </style>
-    <style> .green {color:green} </style>
+    <embed>
+        <style> .red {color:red} </style>
+        <style> .green {color:green} </style>
+    </embed>
 
 .. role:: red
 .. role:: green
