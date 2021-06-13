@@ -1,10 +1,22 @@
 Literature of Deep Learning for Drug Design
 *******************************************
 
+.. https://gist.github.com/ionelmc/e876b73e2001acd2140f#tables rst教程
+.. https://www.jianshu.com/p/1885d5570b37
+
+
 This is a paper list about deep learning for graphs. Some works may be ignored to highlight the really important advances, including
 
 #. low-quality preprint papers
 #. papers without open-source python code
+
+.. raw:: html
+
+    <style> .red {color:red} </style>
+    <style> .green {color:green} </style>
+
+.. role:: red
+.. role:: green
 
 
 .. contents::
@@ -20,39 +32,50 @@ This is a paper list about deep learning for graphs. Some works may be ignored t
 
 
 
+Dataset
+========
+`Pubchem <https://pubchem.ncbi.nlm.nih.gov/classification/#hid=1>`_
+
+`Therapeutics Data Commons <https://tdcommons.ai/>`_
+
+`MoleculeNet <http://moleculenet.ai/>`_
+
+
 Generative
 ===========
 
 `Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules <https://pubs.acs.org/doi/pdf/10.1021/acscentsci.7b00572>`_
     | :venue:`ACS central science 4, no. 2 (2018): 268-276.`
-    | `AutoEncoder: SMILES string-->latent vector-->SMILES string`
-    | `Convert discrete molecules to a multidimensional continuous representation. Generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds.`
+    | :model:`AutoEncoder: SMILES string-->latent vector-->SMILES string`
+    | :content:`Convert discrete molecules to a multidimensional continuous representation. Generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds.`
 
 
 `Generating Focused Molecule Libraries for Drug Discovery with Recurrent Neural Networks <https://pubs.acs.org/doi/full/10.1021%2Facscentsci.7b00512>`_
     | :venue:`ACS central science 4, no. 1 (2018): 120-131.`
     | :model:`Stacked LSTMs, SMILE-->LSTM-->SMILE`
     | :content:`Generate molecule SMILEs via stacked LSTMs. Fine tune this model on smaller dataset to get desired molecules, so called transfer learning.`
+    https://github.com/yangkevin2/icml2020-stochastic-iterative-target-augmentation
 
-
+    
 `Multi-Objective Molecule Generation using Interpretable Substructures <https://arxiv.org/pdf/2002.03244.pdf>`_
     | :venue:`ICML(2020)`
     | :model:`TODO`
     | :content:`Mix molecules with different desired properties to produce the final compound.`
-    | `Github(PyTorch) <https://github.com/wengong-jin/multiobj-rationale>`__
+    | `Github(PyTorch) <https://github.com/wengong-jin/multiobj-rationale>`__ :red:`Errors.` The code doesn't works, possiblely because the different version of the 'rdkit' package.
 
 
 `Improving Molecular Design by Stochastic Iterative Target Augmentation <https://arxiv.org/pdf/2002.04720.pdf>`_
-    | :venue:`ICML(2020)`
-    | :model:`Set2Set and HierGNN`
-    | :content:`Augment training data by adding valid generations evaluared by a pre-trained filter.`
+    :Info: :venue:`ICML(2020)` `Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.`
+    :Sketch: Set2Set and HierGNN
+    :Code: `Github(PyTorch) <https://github.com/yangkevin2/icml2020-stochastic-iterative-target-augmentation>`__  :red:`Errors.` Due to the unstable updation of chemprop, the code doesn't work.
 
 
 `Hierarchical Generation of Molecular Graphs using Structural Motifs <https://arxiv.org/pdf/2002.03230.pdf>`_
     | :venue:`ICML(2020)`
     | :model:`Hierarchical VAE`
     | :content:`TODO`
-    | `Github(PyTorch) <https://github.com/wengong-jin/hgraph2graph>`__
+    | `Github(PyTorch) <https://github.com/wengong-jin/hgraph2graph>`__ :red:`Errors.` The code doesn't works, possiblely because the different version of the 'rdkit' package.
+    
 
 
 `A Generative Model for Molecular Distance Geometry <https://arxiv.org/pdf/1909.11459.pdf>`_
@@ -66,7 +89,7 @@ Generative
     | :venue:`ICLR(2020)`
     | :model:`TODO`
     | :content:`TODO`
-    | `Github(PyTorch) <https://github.com/DeepGraphLearning/GraphAF>`__
+    | `Github(PyTorch) <https://github.com/DeepGraphLearning/GraphAF>`__ :green:`Good code.`
 
 
 Predictive
@@ -84,14 +107,14 @@ Predictive
     | :venue:`NeurIPS(workshop) 2019`
     | :model:`transformer`
     | :content:`Argument the attention matrix with distance and ajacency matrix.`
-    | `Github(Pytorch) <https://github.com/ardigen/MAT>`__
+    | `Github(Pytorch) <https://github.com/ardigen/MAT>`__ :green:`Good code.`
 
 
 `Directional Message Passing for Molecular Graphs <https://arxiv.org/pdf/2003.03123.pdf>`__
     | :venue:`ICLR(2020)`
     | :model:`GNN`
     | :content:`TODO`
-    | `Github(PyTorch) <https://github.com/klicperajo/dimenet>`__
+    | `Github(Tensorflow) <https://github.com/klicperajo/dimenet>`__
 
 
 `ProteinGCN: Protein model quality assessment using graph convolutional networks <https://www.biorxiv.org/content/biorxiv/early/2020/04/07/2020.04.06.028266.full.pdf>`__
@@ -119,7 +142,7 @@ Predictive
     | :venue:`NIPS 2020`
     | :model:`Hierarchical graph convolution, i.e., local and global message passing.`
     | :content:`Combine local and gloable message passing in the same layer to predict physicochemical properties`
-    | `Github(PyTorch) <https://github.com/zetayue/MXMNet>`__
+    | `Github(PyTorch) <https://github.com/zetayue/MXMNet>`__ :green:`Good code`
 
 
 
@@ -143,7 +166,6 @@ Retrosynthesis
 ==============
 
 `Learning Graph Models for Template-Free Retrosynthesis <https://arxiv.org/pdf/2006.07038.pdf>`_
-    | :venue:`ICML workshop(2020)`
-    | :model:`Two stages: (1) predict edit (2) add leaving groups`
-    | :content:`Use two stage methods to achieve better results.`
-    | `Github(PyTorch) <https://github.com/uta-smile/RetroXpert>`__
+    :Info: :venue:`ICML workshop(2020)` `Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.`
+    :Sketch: Use two stage methods to achieve better results: (1) predict edit (2) add leaving groups
+    :Code: `Github(PyTorch) <https://github.com/uta-smile/RetroXpert>`__  :green:`Minor errors.` The code works with a few tweaks.
