@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1 Literature of Deep Learning for Drug Design &#8212; drug_design  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/color.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="literature-of-deep-learning-for-drug-design">
+<h1><span class="sectnum">1</span> Literature of Deep Learning for Drug Design<a class="headerlink" href="#literature-of-deep-learning-for-drug-design" title="Permalink to this headline">¶</a></h1>
+<p>This is a paper list about deep learning for graphs. Some works may be ignored to highlight the really important advances, including</p>
+<ol class="arabic simple">
+<li><p>low-quality preprint papers</p></li>
+<li><p>papers without open-source python code</p></li>
+</ol>
+<div class="contents local topic" id="contents">
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#dataset" id="id1"><span class="sectnum">1.1</span> Dataset</a></p></li>
+<li><p><a class="reference internal" href="#generative" id="id2"><span class="sectnum">1.2</span> Generative</a></p></li>
+<li><p><a class="reference internal" href="#predictive" id="id3"><span class="sectnum">1.3</span> Predictive</a></p></li>
+<li><p><a class="reference internal" href="#self-supervised" id="id4"><span class="sectnum">1.4</span> Self-supervised</a></p></li>
+<li><p><a class="reference internal" href="#retrosynthesis" id="id5"><span class="sectnum">1.5</span> Retrosynthesis</a></p></li>
+</ul>
+</div>
+<section id="dataset">
+<h2><a class="toc-backref" href="#id1"><span class="sectnum">1.1</span> Dataset</a><a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/classification/#hid=1">Pubchem</a></p>
+<p><a class="reference external" href="https://tdcommons.ai/">Therapeutics Data Commons</a></p>
+<p><a class="reference external" href="http://moleculenet.ai/">MoleculeNet</a></p>
+</section>
+<section id="generative">
+<h2><a class="toc-backref" href="#id2"><span class="sectnum">1.2</span> Generative</a><a class="headerlink" href="#generative" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><a class="reference external" href="https://pubs.acs.org/doi/pdf/10.1021/acscentsci.7b00572">Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ACS central science 4, no. 2 (2018): 268-276.</strong> Gómez-Bombarelli, Rafael, Jennifer N. Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D. Hirzel, Ryan P. Adams, and Alán Aspuru-Guzik.</div>
+<div class="line"><strong class="venue">Sketch:</strong> AutoEncoder: SMILES string–&gt;latent vector–&gt;SMILES string. Convert discrete molecules to a multidimensional continuous representation. Generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds.</div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://pubs.acs.org/doi/full/10.1021%2Facscentsci.7b00512">Generating Focused Molecule Libraries for Drug Discovery with Recurrent Neural Networks</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ACS central science 4, no. 1 (2018): 120-131.</strong> Segler, Marwin HS, Thierry Kogej, Christian Tyrchan, and Mark P. Waller.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Stacked LSTMs, SMILE–&gt;LSTM–&gt;SMILE. Generate molecule SMILEs via stacked LSTMs. Fine tune this model on smaller dataset to get desired molecules, so called transfer learning.</div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2002.03244.pdf">Multi-Objective Molecule Generation using Interpretable Substructures</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICML(2020)</strong> Jin, Wengong, Regina Barzilay, and Tommi Jaakkola.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Mix molecules with different desired properties to produce the final compound.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/wengong-jin/multiobj-rationale">Github(PyTorch)</a> <span class="red">Errors.</span> The code doesn’t works, possiblely because the different version of the ‘rdkit’ package.</div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2002.04720.pdf">Improving Molecular Design by Stochastic Iterative Target Augmentation</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICML(2020)</strong> Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.`</div>
+<div class="line"><strong class="venue">Sketch:</strong> Set2Set and HierGNN</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/yangkevin2/icml2020-stochastic-iterative-target-augmentation">Github(PyTorch)</a>  <span class="red">Errors.</span> Due to the unstable updation of chemprop, the code doesn’t work.</div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2002.03230.pdf">Hierarchical Generation of Molecular Graphs using Structural Motifs</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICML(2020)</strong> Jin, Wengong, Regina Barzilay, and Tommi Jaakkola.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Hierarchical VAE</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/wengong-jin/hgraph2graph">Github(PyTorch)</a> <span class="red">Errors.</span> The code doesn’t works, possiblely because the different version of the ‘rdkit’ package.</div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/1909.11459.pdf">A Generative Model for Molecular Distance Geometry</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICML(2020)</strong> Simm, Gregor NC, and José Miguel Hernández-Lobato.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Generate 3d structure from graph via CVAE</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/gncs/graphdg">Github(Tensorflow)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2001.09382.pdf">Graphaf: a flow-based autoregressive model for molecular graph generation</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICLR(2020)</strong> Shi, Chence, Minkai Xu, Zhaocheng Zhu, Weinan Zhang, Ming Zhang, and Jian Tang.</div>
+<div class="line"><strong class="venue">Sketch:</strong> TODO</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/DeepGraphLearning/GraphAF">Github(PyTorch)</a> <span class="green">Good!</span></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="predictive">
+<h2><a class="toc-backref" href="#id3"><span class="sectnum">1.3</span> Predictive</a><a class="headerlink" href="#predictive" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><a class="reference external" href="https://arxiv.org/abs/1509.09292">Convolutional Networks on Graphs for Learning Molecular Fingerprints</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">NIPS 2015</strong> Duvenaud, David, Dougal Maclaurin, Jorge Aguilera-Iparraguirre, Rafael Gómez-Bombarelli, Timothy Hirzel, Alán Aspuru-Guzik, and Ryan P. Adams.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Learning the graph embedding with message passing.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/aksub99/molecular-vae">Github(PyTorch)</a>  <a class="reference external" href="https://github.com/HIPS/molecule-autoencoder">Github(Theano+Keras)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2002.08264.pdf">Molecule Attention Transformer</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">NeurIPS(workshop) 2019</strong> Maziarka, Łukasz, Tomasz Danel, Sławomir Mucha, Krzysztof Rataj, Jacek Tabor, and Stanisław Jastrzębski.</div>
+<div class="line"><strong class="venue">Sketch:</strong> <cite>Argument the attention matrix with distance and ajacency matrix.</cite></div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/ardigen/MAT">Github(Pytorch)</a> <span class="green">Good!</span></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2003.03123.pdf">Directional Message Passing for Molecular Graphs</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICLR(2020)</strong> Klicpera, Johannes, Janek Groß, and Stephan Günnemann.</div>
+<div class="line"><strong class="venue">Sketch:</strong> TODO</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/klicperajo/dimenet">Github(Tensorflow)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://www.biorxiv.org/content/biorxiv/early/2020/04/07/2020.04.06.028266.full.pdf">ProteinGCN: Protein model quality assessment using graph convolutional networks</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">BioRxiv 2020</strong> Sanyal, Soumya, Ivan Anishchenko, Anirudh Dagar, David Baker, and Partha Talukdar.</div>
+<div class="line"><strong class="venue">Sketch:</strong> GCN+Pooling</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/malllabiisc/ProteinGCN">Github(Pytorch)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2009.12710.pdf">Heterogeneous Molecular Graph Neural Networks for Predicting Molecule Properties</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICDM 2020</strong> Shui, Zeren, and George Karypis.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Heterogeneous Molecular Graph Neural Networks. High-order graph convolution, considering interactions between functional groups</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/shuix007/HMGNN">Github(PyTorch)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://academic.oup.com/bib/advance-article-abstract/doi/10.1093/bib/bbaa266/5955940">TrimNet: learning molecular representation from triplet messages for biomedicine</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">Briefings in Bioinformatics (2020)</strong> Li, Pengyong, Yuquan Li, Chang-Yu Hsieh, Shengyu Zhang, Xianggen Liu, Huanxiang Liu, Sen Song, and Xiaojun Yao.</div>
+<div class="line"><strong class="venue">Sketch:</strong> A variant of GAT(Graph Attention model)+Set2Set+Focal loss. Use graph attention machanism to learn node features, then aggregate them with Set2Set, and finally optimize the model via Focal loss.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/yvquanli/TrimNet">Github(PyTorch)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://arxiv.org/abs/2011.07457">Molecular Mechanics-Driven Graph Neural Network with Multiplex Graph for Molecular Structures</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">NIPS 2020</strong> Zhang, Shuo, Yang Liu, and Lei Xie.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Hierarchical graph convolution, i.e., local and global message passing.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/zetayue/MXMNet">Github(PyTorch)</a> <span class="green">Good!</span></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="self-supervised">
+<h2><a class="toc-backref" href="#id4"><span class="sectnum">1.4</span> Self-supervised</a><a class="headerlink" href="#self-supervised" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><a class="reference external" href="https://arxiv.org/pdf/1908.01000.pdf">Infograph: Unsupervised and semi-supervised graph-level representation learning via mutual information maximization</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICLR(2020)</strong> Sun, Fan-Yun, Jordan Hoffmann, Vikas Verma, and Jian Tang.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Adversarial self-supervised loss + supervised loss. aximize Mutual Information at each layer.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/fanyun-sun/InfoGraph">Github(PyTorch)</a></div>
+</div>
+</dd>
+<dt><a class="reference external" href="https://drug.ai.tencent.com/publications/GROVER.pdf">Self-Supervised Graph Transformer on Large-Scale Molecular Data</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">NIPS(2020)</strong> Rong, Yu, Yatao Bian, Tingyang Xu, Weiyang Xie, Ying Wei, Wenbing Huang, and Junzhou Huang.</div>
+<div class="line"><strong class="venue">Sketch:</strong> Transformer + GNN + node/edge/graph level self-supervised tasks. Downstream tasks include classification and regression.</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/tencent-ailab/grover">Github(PyTorch)</a></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="retrosynthesis">
+<h2><a class="toc-backref" href="#id5"><span class="sectnum">1.5</span> Retrosynthesis</a><a class="headerlink" href="#retrosynthesis" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><a class="reference external" href="https://arxiv.org/pdf/2006.07038.pdf">Learning Graph Models for Template-Free Retrosynthesis</a></dt><dd><div class="line-block">
+<div class="line"><strong class="venue">ICML workshop(2020)</strong> <cite>Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.</cite></div>
+<div class="line"><strong class="venue">Sketch:</strong> Use two stage methods to achieve better results: (1) predict edit (2) add leaving groups</div>
+<div class="line"><strong class="venue">Code:</strong> <a class="reference external" href="https://github.com/uta-smile/RetroXpert">Github(PyTorch)</a>  <span class="green">Minor errors.</span> The code works with a few tweaks.</div>
+</div>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">drug_design</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Zhangyang Gao.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
