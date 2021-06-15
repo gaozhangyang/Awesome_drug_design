@@ -155,8 +155,33 @@ Self-supervised
 
 Retrosynthesis
 ==============
+`Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models <https://arxiv.org/ftp/arxiv/papers/1706/1706.01643.pdf>`_
+      | :venue:`ACS central science 3, no. 10 (2017): 1103-1113.` Liu, Bowen, Bharath Ramsundar, Prasad Kawthekar, Jade Shi, Joseph Gomes, Quang Luu Nguyen, Stephen Ho, Jack Sloane, Paul Wender, and Vijay Pande.
+      | :venue:`Sketch:` SMILES-->seq2seq-->SMILES
+      | :venue:`Code` `Github(Tensorflow) <https://github.com/pandegroup/reaction_prediction_seq2seq.git>`__
+
+
+`Automatic Retrosynthetic Route Planning Using Template-Free Models <https://arxiv.org/ftp/arxiv/papers/1906/1906.02308.pdf>`_
+      | :venue:`Chemical Science, 11(12):3355–3364, 2020.` Lin, Kangjie, Youjun Xu, Jianfeng Pei, and Luhua Lai.
+      | :venue:`Sketch:` Using Transformer for one-step retrosynthesis. Then, combining the Monte Carlo Tree Search for multi-step retrosynthesis.
+      | :venue:`Code:` `Github(Tensorflow) <https://github.com/connorcoley/retrotemp>`__
+
+
+`RetroXpert: Decompose Retrosynthesis Prediction Like A Chemist <https://arxiv.org/pdf/2011.02893.pdf>`_
+      | :venue:`NIPS(2020)` Yan, Chaochao, Qianggang Ding, Peilin Zhao, Shuangjia Zheng, Jinyu Yang, Yang Yu, and Junzhou Huang.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/uta-smile/RetroXpert>`__  :green:`Minor errors.` The code works with a few tweaks.
+
 
 `Learning Graph Models for Template-Free Retrosynthesis <https://arxiv.org/pdf/2006.07038.pdf>`_
       | :venue:`ICML workshop(2020)` `Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.`
       | :venue:`Sketch:` Use two stage methods to achieve better results: (1) predict edit (2) add leaving groups
-      | :venue:`Code:` `Github(PyTorch) <https://github.com/uta-smile/RetroXpert>`__  :green:`Minor errors.` The code works with a few tweaks.
+
+
+`RetroPrime: A Diverse, Plausible and Transformer-based Method for Single-Step Retrosynthesis Predictions <https://chemrxiv.org/articles/preprint/RetroPrime_A_Chemistry-Inspired_and_Transformer-based_Method_for_Retrosynthesis_Predictions/12971942>`_
+      | :venue:`Chemical Engineering Journal 420 (2021): 129845.` Wang, Xiaorui, Yuquan Li, Jiezhong Qiu, Guangyong Chen, Huanxiang Liu, Benben Liao, Chang-Yu Hsieh, and Xiaojun Yao.
+      | :venue:`Sketch:`
+      | :venue:`Code:`  `Github(PyTorch) <https://github.com/wangxr0526/RetroPrime>`__ 
+
+
+
