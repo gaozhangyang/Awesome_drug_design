@@ -12,7 +12,7 @@ Literature of Deep Learning for Drug Design
 .. https://www.jianshu.com/p/1885d5570b37
 
 
-This is a paper list about deep learning for graphs. Some works may be ignored to highlight the really important advances, including
+This is a paper list about deep learning for drug design. Some works may be ignored to highlight the really important advances, including
 
 #. low-quality preprint papers
 #. papers without open-source python code
@@ -92,6 +92,29 @@ Generative
       | :venue:`Sketch:` TODO
       | :venue:`Code:` `Github(PyTorch) <https://github.com/DeepGraphLearning/GraphAF>`__ :green:`Good!`
 
+      `A Two-Step Graph Convolutional Decoder for Molecule Generation <https://arxiv.org/pdf/1906.03412.pdf>`_
+      | :venue:`arxiv 2019` Bresson, Xavier, and Thomas Laurent.
+      | :venue:`Sketch:` Generation: 1.Predicting the number of each types of atoms 2.Link prediction
+      | :venue:`Code:` None
+
+
+`A model to search for synthesizable molecules <https://arxiv.org/pdf/1906.05221.pdf>`_
+      | :venue:`NIPS 2019` Bradshaw, John, Brooks Paige, Matt J. Kusner, Marwin HS Segler, and José Miguel Hernández-Lobato. 
+      | :venue:`Sketch:` Generation: 1. hidden-->reactants  2. reactants-->products
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/john-bradshaw/molecule-chef>`__
+
+
+`Learning to navigate the synthetically accessible chemical space using reinforcement learning <http://proceedings.mlr.press/v119/gottipati20a/gottipati20a.pdf>`_
+      | :venue:`ICML 2020` Gottipati, Sai Krishna, Boris Sattarov, Sufeng Niu, Yashaswi Pathak, Haoran Wei, Shengchao Liu, Simon Blackburn et al.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(Other) <https://github.com/99andBeyond/Apollo1060>`__ :red:`Incomplete!`
+
+
+`Molecular hypergraph grammar with its application to molecular optimization <https://arxiv.org/pdf/1809.02745.pdf>`_
+      | :venue:`ICML 2019` Kajino, Hiroshi.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(Pytorch) <https://github.com/ibm-research-tokyo/graph_grammar>`__
+
 
 Predictive
 ===========
@@ -138,6 +161,16 @@ Predictive
       | :venue:`Code:` `Github(PyTorch) <https://github.com/zetayue/MXMNet>`__ :green:`Good!`
 
 
+`Directional message passing for molecular graphs <https://arxiv.org/pdf/2003.03123.pdf>`_
+      | :venue:`ICLR 2020` Klicpera, Johannes, Janek Groß, and Stephan Günnemann.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(Tensorflow) <https://github.com/klicperajo/dimenet>`__ 
+
+`Molecular property prediction: A multilevel quantum interactions modeling perspective <https://arxiv.org/pdf/1906.11081.pdf>`_
+      | :venue:`AAAI 2019` Lu, Chengqiang, Qi Liu, Chao Wang, Zhenya Huang, Peize Lin, and Lixin He
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/awslabs/dgl-lifesci/blob/master/python/dgllife/model/model_zoo/mgcn_predictor.py>`__ 
+
 
 Self-supervised
 ================
@@ -153,12 +186,18 @@ Self-supervised
       | :venue:`Code:` `Github(PyTorch) <https://github.com/tencent-ailab/grover>`__
 
 
-Retrosynthesis
-==============
+Retrosynthesis & Molecular Optimization
+=======================================
 `Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models <https://arxiv.org/ftp/arxiv/papers/1706/1706.01643.pdf>`_
       | :venue:`ACS central science 3, no. 10 (2017): 1103-1113.` Liu, Bowen, Bharath Ramsundar, Prasad Kawthekar, Jade Shi, Joseph Gomes, Quang Luu Nguyen, Stephen Ho, Jack Sloane, Paul Wender, and Vijay Pande.
       | :venue:`Sketch:` SMILES-->seq2seq-->SMILES
       | :venue:`Code` `Github(Tensorflow) <https://github.com/pandegroup/reaction_prediction_seq2seq.git>`__
+
+
+`Predicting retrosynthetic reactions using self-corrected transformer neural networks <https://arxiv.org/ftp/arxiv/papers/1907/1907.01356.pdf>`_
+      | :venue:`Journal of chemical information and modeling 60, no. 1 (2019): 47-55.` Zheng, Shuangjia, Jiahua Rao, Zhongyue Zhang, Jun Xu, and Yuedong Yang.
+      | :venue:`Sketch` Building a Transformer-based syntax corrector to automatically correct the syntax of unreasonable SMILES strings for improving the performances.
+      | :venue:`Code` `Github(PyTorch) <https://github.com/sysu-yanglab/Self-Corrected-Retrosynthetic-Reaction-Predictor>`__
 
 
 `Automatic Retrosynthetic Route Planning Using Template-Free Models <https://arxiv.org/ftp/arxiv/papers/1906/1906.02308.pdf>`_
@@ -181,7 +220,62 @@ Retrosynthesis
 `RetroPrime: A Diverse, Plausible and Transformer-based Method for Single-Step Retrosynthesis Predictions <https://chemrxiv.org/articles/preprint/RetroPrime_A_Chemistry-Inspired_and_Transformer-based_Method_for_Retrosynthesis_Predictions/12971942>`_
       | :venue:`Chemical Engineering Journal 420 (2021): 129845.` Wang, Xiaorui, Yuquan Li, Jiezhong Qiu, Guangyong Chen, Huanxiang Liu, Benben Liao, Chang-Yu Hsieh, and Xiaojun Yao.
       | :venue:`Sketch:`
-      | :venue:`Code:`  `Github(PyTorch) <https://github.com/wangxr0526/RetroPrime>`__ 
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/wangxr0526/RetroPrime>`__ 
 
 
+`A graph to graphs framework for retrosynthesis prediction <http://proceedings.mlr.press/v119/shi20d/shi20d.pdf>`_
+      | :venue:`PMLR (2020)` Shi, Chence, Minkai Xu, Hongyu Guo, Ming Zhang, and Jian Tang.
+      | :venue:`Sketch:`
+      | :venue:`Code:`  None 
 
+
+`Molecule Optimization via Fragment-based Generative Models <https://arxiv.org/pdf/2012.04231.pdf>`_
+      | :venue:`arxiv 2021` Chen, Ziqi, Martin Renqiang Min, Srinivasan Parthasarathy, and Xia Ning.
+      | :venue:`Sketch:` Using molecular graph and junction tree to learn embeddings. Then, 1. predicting site 2. remove fragment 3. predict connections and fragments.
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/ziqi92/Modof>`__
+
+
+`Retrosynthesis Prediction with Conditional Graph Logic Network <https://arxiv.org/pdf/2001.01408.pdf>`_
+      | :venue:`NIPS 2019` Dai, Hanjun, Chengtao Li, Connor W. Coley, Bo Dai, and Le Song.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/Hanjun-Dai/GLN>`__
+
+`Retrognn: Approximating retrosynthesis by graph neural networks for de novo drug design <https://arxiv.org/ftp/arxiv/papers/2011/2011.13042.pdf>`_
+      | :venue:`NIPS(workshop) 2020` Liu, Cheng-Hao, Maksym Korablyov, Stanisław Jastrzębski, Paweł Włodarczyk-Pruszyński, Yoshua Bengio, and Marwin HS Segler. "
+      | :venue:`Sketch:` 
+      | :venue:`Code:` None
+
+Association
+=====================
+
+`Discovering Protein Drug Targets Using Knowledge Graph Embeddings <https://aran.library.nuigalway.ie/bitstream/handle/10379/15375/main_dti.pdf?sequence=1&isAllowed=n>`_
+      | :venue:`Bioinformatics (2020)` Mohamed, Sameh K., Vít Nováček, and Aayah Nounu.
+      | :venue:`Asign a learnable embedding/parameter for each node and optimizing these embedding via true/false facts on the Knowledge graph.`
+      | :venue:`Code:`  `Numpy(lack of training code) <http://drugtargets.insight-centre.org/download.html>`__
+
+`BNPMDA: Bipartite Network Projection for MiRNA–Disease Association prediction <https://watermark.silverchair.com/bty333.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAt4wggLaBgkqhkiG9w0BBwagggLLMIICxwIBADCCAsAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMpRlzvbNSEjBqQlcsAgEQgIICkYeklyup8JUnfRkAFMgB7jWi7zVkHvFRCa0OoMnW4XH4_VfwsoZyRS6P9_2ftDBIBcyeLeQib9ynPV1w7gfx62mviGRFe7zH7J_e2sjIyJODZAubdy4LuDrtQf_LRybWriIGX-7ASyqvSEaE9tB2GfOWkRgHsHjB8T7srP-ZvRZjk38m6ftmwn3R3x4_36ACST4E7KZ1bPfrLmpKU_EeWfMNuOZ7SJmyLJpiiRGZTYQ6ymfaAjNAYlPtSNS5MrM5XeYTWnZqIbKiTaBMvHts6IwCb__26asfc3gh9GfhIZ8rIWGPV0EmCcob5S4ToXUUd_BKPB8GoWIgyKM-uhGK6rKakNm7m3HzM1lULSHbqT_1kE00vFZGI2KhDYOTw5YeBCiJxEZkkLvg1brlhvyozFws9ZqtY3X1Oel_ki92r7FWYc98hM_4z15mAHD5w22HjJoUoqtqPKN_jVAoqvzpCwqNBMudmy_mjGNxRCbO0B-g5UDPMDix4gz_Bm712TROX_OF_z1ipTG-6RvO6l9RqVzZfmeKJotIKXRprMjZ_EkfHhPQCTgovbIlY9RPUESqamCoUVAuhKGsicWk7LBgIoNW1KVYad3weFO8YqeLeXF2RLQqG3KA_lrSwG4Nl0bC4mxGDKoWcc15jBSNPJynpkXJRSbgmzrlCwZbHEc_UnITsYH2DQpOZFGmJYNBum8Xueo3kmGhXBh76Z0Y96AqTIHMTmbDlu6GxxblMUg2zAjCuLnOyBf4buzSdc5ZfGGaIIEttgorXjBjIqK-tRUWtIuhYgWwuf9CAZgrv8YWv0UK45zqzNQtfauQ_CWBVOBRtzV21y8gOA8qoVPWEyuAmW-MARNBkxYj3qEWMyrXF4w1qg>`_
+      | :venue:`Bioinformatics (2018)` Chen, Xing, Di Xie, Lei Wang, Qi Zhao, Zhu-Hong You, and Hongsheng Liu.
+      | :venue:`Bipartite Network Projection for MiRNA-Disease Association prediction based on the known miRNA-disease association, intergrated miRNA similarity and integrated disease similarity.`
+      | :venue:`Code`   Can't access.
+
+`Network analyses identify liver-specific targets for treating liver diseases <https://www.embopress.org/doi/pdf/10.15252/msb.20177703>`_
+      | :venue:`Molecular systems biology (2017)` Lee, Sunjae, Cheng Zhang, Zhengtao Liu, Martina Klevstig, Bani Mukhopadhyay, Mattias Bergentall, Resat Cinar et al.
+      | :venue:`We performed integrative network analyses to identify targets that can be used for effectively treating liver diseases with minimal side effects`
+      | :venue:`Code`   None
+
+`Human disease MiRNA inference by combining target information based on heterogeneous manifolds <https://reader.elsevier.com/reader/sd/pii/S1532046418300327?token=2799B1B133D1CDCB9910B0884EEFF5D14FD849145E387A065E566D3578C936B52FF335AE24F18EA9EB60C9D56C104DC4&originRegion=us-east-1&originCreation=20210719042558>`_
+      | :venue:`Journal of biomedical informatics  (2018)` Ding, Pingjian, Jiawei Luo, Cheng Liang, Qiu Xiao, and Buwen Cao.
+      | :venue:`we developed a novel algorithm, named inference of Disease-related MiRNAs based on Heterogeneous Manifold (DMHM), to accurately and efficiently identify miRNA-disease associations by integrating multi-omics data`
+      | :venue:`Code`   Can't access.
+
+
+`Caster: Predicting drug interactions with chemical substructure representation <https://arxiv.org/pdf/1911.06446.pdf>`_
+      | :venue:`AAAI 2020` Huang, Kexin, Cao Xiao, Trong Hoang, Lucas Glass, and Jimeng Sun.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/kexinhuang12345/CASTER/tree/master/DDE>`__
+
+
+`Drug-drug interaction prediction based on knowledge graph embeddings and convolutional-LSTM network <https://arxiv.org/pdf/1908.01288.pdf>`_
+      | :venue:`the 10th ACM international conference on bioinformatics` Karim, Md Rezaul, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, and Stefan Decker.
+      | :venue:`Sketch:` 
+      | :venue:`Code:` `Github(Tensorflow&Keras) <https://github.com/rezacsedu/Drug-Drug-Interaction-Prediction>`__
