@@ -62,18 +62,6 @@ Generative
       | :venue:`ACS central science 4, no. 1 (2018): 120-131.` Segler, Marwin HS, Thierry Kogej, Christian Tyrchan, and Mark P. Waller.
       | :venue:`Sketch:` Stacked LSTMs, SMILE-->LSTM-->SMILE. Generate molecule SMILEs via stacked LSTMs. Fine tune this model on smaller dataset to get desired molecules, so called transfer learning.
 
-      
-`Multi-Objective Molecule Generation using Interpretable Substructures <https://arxiv.org/pdf/2002.03244.pdf>`_
-      | :venue:`ICML(2020)` Jin, Wengong, Regina Barzilay, and Tommi Jaakkola.
-      | :venue:`Sketch:` Mix molecules with different desired properties to produce the final compound.
-      | :venue:`Code:` `Github(PyTorch) <https://github.com/wengong-jin/multiobj-rationale>`__ :red:`Errors.` The code doesn't works, possiblely because the different version of the 'rdkit' package.
-
-
-`Improving Molecular Design by Stochastic Iterative Target Augmentation <https://arxiv.org/pdf/2002.04720.pdf>`_
-      | :venue:`ICML(2020)` Somnath, Vignesh Ram, Charlotte Bunne, Connor W. Coley, Andreas Krause, and Regina Barzilay.`
-      | :venue:`Sketch:` Set2Set and HierGNN
-      | :venue:`Code:` `Github(PyTorch) <https://github.com/yangkevin2/icml2020-stochastic-iterative-target-augmentation>`__  :red:`Errors.` Due to the unstable updation of chemprop, the code doesn't work.
-
 
 `Hierarchical Generation of Molecular Graphs using Structural Motifs <https://arxiv.org/pdf/2002.03230.pdf>`_
       | :venue:`ICML(2020)` Jin, Wengong, Regina Barzilay, and Tommi Jaakkola.
@@ -87,12 +75,25 @@ Generative
       | :venue:`Code:` `Github(Tensorflow) <https://github.com/gncs/graphdg>`__
 
 
+`Graphnvp: An invertible flow model for generating molecular graphs <https://arxiv.org/pdf/1905.11600.pdf>`_
+      | :venue:`arxiv(2019)` Madhawa, Kaushalya, Katushiko Ishiguro, Kosuke Nakago, and Motoki Abe.
+      | :venue:`Sketch:` 1. propose the first invertible, normalizing flow-based molecular graph generation model. 2. generate adjacency tensor and node attributes seperately.
+      | :venue:`Code:` `Github(Chainer) <https://github.com/pfnet-research/graph-nvp>`__
+
+
 `Graphaf: a flow-based autoregressive model for molecular graph generation <https://arxiv.org/pdf/2001.09382.pdf>`_
       | :venue:`ICLR(2020)` Shi, Chence, Minkai Xu, Zhaocheng Zhu, Weinan Zhang, Ming Zhang, and Jian Tang. 
-      | :venue:`Sketch:` TODO
+      | :venue:`Sketch:` They propose a flow-based model and introduce a sequential decision process to generate valid molecules satisfying chemical rules.
       | :venue:`Code:` `Github(PyTorch) <https://github.com/DeepGraphLearning/GraphAF>`__ :green:`Good!`
 
-      `A Two-Step Graph Convolutional Decoder for Molecule Generation <https://arxiv.org/pdf/1906.03412.pdf>`_
+
+`MoFlow: an invertible flow model for generating molecular graphs <https://arxiv.org/pdf/2006.10137.pdf>`_
+      | :venue:`KDD(2020)` Zang, Chengxi, and Fei Wang.
+      | :venue:`Sketch:` A flow-based MoFlow generating molecules at one shot and guarantee the validity. MoFlow consists of a variant of Glow model for bonds, a novel graph conditional flow for atoms given bonds, and then combining them with post-hoc validity correlations. 
+      | :venue:`Code:` `Github(PyTorch) <hhttps://github.com/calvin-zcx/moflow>`__
+
+
+`A Two-Step Graph Convolutional Decoder for Molecule Generation <https://arxiv.org/pdf/1906.03412.pdf>`_
       | :venue:`arxiv 2019` Bresson, Xavier, and Thomas Laurent.
       | :venue:`Sketch:` Generation: 1.Predicting the number of each types of atoms 2.Link prediction
       | :venue:`Code:` None
@@ -159,12 +160,6 @@ Predictive
       | :venue:`NIPS 2020` Zhang, Shuo, Yang Liu, and Lei Xie.
       | :venue:`Sketch:` Hierarchical graph convolution, i.e., local and global message passing.
       | :venue:`Code:` `Github(PyTorch) <https://github.com/zetayue/MXMNet>`__ :green:`Good!`
-
-
-`Directional message passing for molecular graphs <https://arxiv.org/pdf/2003.03123.pdf>`_
-      | :venue:`ICLR 2020` Klicpera, Johannes, Janek Groß, and Stephan Günnemann.
-      | :venue:`Sketch:` 
-      | :venue:`Code:` `Github(Tensorflow) <https://github.com/klicperajo/dimenet>`__ 
 
 `Molecular property prediction: A multilevel quantum interactions modeling perspective <https://arxiv.org/pdf/1906.11081.pdf>`_
       | :venue:`AAAI 2019` Lu, Chengqiang, Qi Liu, Chao Wang, Zhenya Huang, Peize Lin, and Lixin He
@@ -240,10 +235,13 @@ Retrosynthesis & Molecular Optimization
       | :venue:`Sketch:` 
       | :venue:`Code:` `Github(PyTorch) <https://github.com/Hanjun-Dai/GLN>`__
 
-`Retrognn: Approximating retrosynthesis by graph neural networks for de novo drug design <https://arxiv.org/ftp/arxiv/papers/2011/2011.13042.pdf>`_
-      | :venue:`NIPS(workshop) 2020` Liu, Cheng-Hao, Maksym Korablyov, Stanisław Jastrzębski, Paweł Włodarczyk-Pruszyński, Yoshua Bengio, and Marwin HS Segler. "
-      | :venue:`Sketch:` 
-      | :venue:`Code:` None
+
+`Multi-Objective Molecule Generation using Interpretable Substructures <https://arxiv.org/pdf/2002.03244.pdf>`_
+      | :venue:`ICML(2020)` Jin, Wengong, Regina Barzilay, and Tommi Jaakkola.
+      | :venue:`Sketch:` 1. Generate rationales with certain property by MCTS and property predictor; 2. merge diverse rationales through their common structure to get final rationale with multi-Properties; 3. convert the final rationale to valid molecule
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/wengong-jin/multiobj-rationale>`__ :red:`Errors.` The code doesn't works, possiblely because the different version of the 'rdkit' package.
+
+
 
 Association
 =====================
@@ -276,6 +274,15 @@ Association
 
 
 `Drug-drug interaction prediction based on knowledge graph embeddings and convolutional-LSTM network <https://arxiv.org/pdf/1908.01288.pdf>`_
-      | :venue:`the 10th ACM international conference on bioinformatics` Karim, Md Rezaul, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, and Stefan Decker.
+      | :venue:`the 10th ACM international conference on bioinformatics(2019)` Karim, Md Rezaul, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, and Stefan Decker.
       | :venue:`Sketch:` 
       | :venue:`Code:` `Github(Tensorflow&Keras) <https://github.com/rezacsedu/Drug-Drug-Interaction-Prediction>`__
+
+
+Other
+=====
+
+`Improving Molecular Design by Stochastic Iterative Target Augmentation <https://arxiv.org/pdf/2002.04720.pdf>`_
+      | :venue:`ICML(2020)` Yang, Kevin, Wengong Jin, Kyle Swanson, Regina Barzilay, and Tommi Jaakkola.`
+      | :venue:`Sketch:` 1. Augment training data with generated ones which are filtered by a pre-trianed filter to meet some constriants. 2. They wrap the algorithm with EM framework.
+      | :venue:`Code:` `Github(PyTorch) <https://github.com/yangkevin2/icml2020-stochastic-iterative-target-augmentation>`__  :red:`Errors.` Due to the unstable updation of chemprop, the code doesn't work.
